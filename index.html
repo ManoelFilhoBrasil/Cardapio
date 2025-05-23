@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lanches do Zé - Cardápio Digital</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .item {
+      background-color: white;
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    }
+    .item h2 {
+      margin: 0 0 5px;
+    }
+    .item p {
+      margin: 0 0 10px;
+      color: #555;
+    }
+    button {
+      background-color: #25D366;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1ebe5b;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lanches do Zé - Cardápio Digital</h1>
+
+  <div class="item">
+    <h2>X-Tudo</h2>
+    <p>Pão, carne, queijo, ovo, bacon, alface, tomate - R$ 15,00</p>
+    <button onclick="enviarPedido('X-Tudo')">Pedir via WhatsApp</button>
+  </div>
+
+  <div class="item">
+    <h2>Refrigerante lata</h2>
+    <p>Coca-Cola, Guaraná ou Fanta - R$ 5,00</p>
+    <button onclick="enviarPedido('Refrigerante lata')">Pedir via WhatsApp</button>
+  </div>
+
+  <div class="item">
+    <h2>Açaí na tigela</h2>
+    <p>300ml com granola e banana - R$ 12,00</p>
+    <button onclick="enviarPedido('Açaí na tigela')">Pedir via WhatsApp</button>
+  </div>
+
+  <script>
+    function enviarPedido(item) {
+      const numero = '5592985824356'; // Substitua aqui se o número mudar
+      const mensagem = `Olá, gostaria de pedir: ${item}`;
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>
